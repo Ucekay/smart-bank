@@ -1,42 +1,89 @@
 {
-  "expo": {
-    "name": "smart-bank",
-    "slug": "smart-bank",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "smartbank",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
-  }
+	"expo": {
+		"name": "smart-bank",
+		"slug": "smart-bank",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./src/assets/images/icon.png",
+		"scheme": "smartbank",
+		"userInterfaceStyle": "automatic",
+		"newArchEnabled": true,
+		"ios": {
+			"supportsTablet": false,
+			"bundleIdentifier": "com.ucekay.smart-bank",
+			"infoPlist": {
+				"NSAppTransportSecurity": {
+					"NSAllowsArbitraryLoads": true
+				}
+			}
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./src/assets/images/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"edgeToEdgeEnabled": true
+		},
+		"web": {
+			"bundler": "metro",
+			"output": "static",
+			"favicon": "./src/assets/images/favicon.png"
+		},
+		"plugins": [
+			"expo-router",
+			[
+				"expo-splash-screen",
+				{
+					"image": "./src/assets/images/splash-icon-light.png",
+					"imageWidth": 200,
+					"resizeMode": "contain",
+					"backgroundColor": "#ffffff"
+				}
+			],
+			[
+				"expo-font",
+				{
+					"fonts": [
+						"./src/assets/fonts/Satoshi-Black.otf",
+						"./src/assets/fonts/Satoshi-BlackItalic.otf",
+						"./src/assets/fonts/Satoshi-Bold.otf",
+						"./src/assets/fonts/Satoshi-BoldItalic.otf",
+						"./src/assets/fonts/Satoshi-Italic.otf",
+						"./src/assets/fonts/Satoshi-Light.otf",
+						"./src/assets/fonts/Satoshi-LightItalic.otf",
+						"./src/assets/fonts/Satoshi-Medium.otf",
+						"./src/assets/fonts/Satoshi-MediumItalic.otf",
+						"./src/assets/fonts/Satoshi-Regular.otf",
+						"./src/assets/fonts/GeneralSans-Bold.otf",
+						"./src/assets/fonts/GeneralSans-BoldItalic.otf",
+						"./src/assets/fonts/GeneralSans-Extralight.otf",
+						"./src/assets/fonts/GeneralSans-ExtralightItalic.otf",
+						"./src/assets/fonts/GeneralSans-Italic.otf",
+						"./src/assets/fonts/GeneralSans-Light.otf",
+						"./src/assets/fonts/GeneralSans-LightItalic.otf",
+						"./src/assets/fonts/GeneralSans-Medium.otf",
+						"./src/assets/fonts/GeneralSans-MediumItalic.otf",
+						"./src/assets/fonts/GeneralSans-Regular.otf",
+						"./src/assets/fonts/GeneralSans-Semibold.otf",
+						"./src/assets/fonts/GeneralSans-SemiboldItalic.otf",
+						"./src/assets/fonts/SpaceMono-Regular.ttf"
+					]
+				}
+			],
+			"expo-web-browser",
+			[
+				"expo-build-properties",
+				{
+					"ios": {
+						"buildFromSource": false
+					}
+				}
+			],
+			"expo-secure-store"
+		],
+		"experiments": {
+			"typedRoutes": true,
+			"reactCompiler": true
+		}
+	}
 }
