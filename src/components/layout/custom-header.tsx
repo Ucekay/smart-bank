@@ -36,9 +36,9 @@ const styles = StyleSheet.create((theme, rt) => ({
 		flexDirection: "row",
 	}),
 	leftContainer: {
-		top: rt.insets.top,
 		position: "absolute",
 		left: 0,
+		bottom: 0,
 	},
 	rightContainer: {
 		top: rt.insets.top,
