@@ -1,0 +1,211 @@
+---
+description: Technology stack, dependency versions, and best practices for smart-bank React Native/Expo app
+globs: package.json, **/*.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+
+# Smart Bank Technology Stack
+
+This document outlines the complete technology stack, dependency versions, and best practices for the smart-bank React Native/Expo application.
+
+## Core Framework Stack
+
+### React & React Native
+
+- **React**: `19.1.0` - Latest stable version with concurrent features
+- **React DOM**: `19.1.0` - For web platform support
+- **React Native**: `0.80.1` - Latest stable version with new architecture support
+
+**Best Practices:**
+
+- React 19 introduces concurrent features - use `use()` hook for data fetching
+- Leverage React 19's improved error boundaries and suspense
+- React Native 0.80+ supports the new architecture - consider enabling for performance
+
+### Expo SDK
+
+- **Expo**: `^54.0.0-canary-20250729-d8899ae` - Canary version with latest features
+- **Expo Router**: `5.2.0-canary-20250729-d8899ae` - File-based routing solution
+
+**Best Practices:**
+
+- Using canary versions for latest features - monitor for stability
+- Expo Router 5.x supports typed routes - enable in app.json
+- Consider pinning to stable versions for production releases
+
+## Navigation & UI
+
+### React Navigation
+
+- **@react-navigation/native**: `^7.1.6` - Core navigation library
+- **@react-navigation/bottom-tabs**: `^7.3.10` - Bottom tab navigation
+- **@react-navigation/elements**: `^2.3.8` - Navigation UI elements
+
+**Best Practices:**
+
+- React Navigation 7.x is the latest major version with improved performance
+- Use Expo Router for file-based routing instead of manual React Navigation setup
+- Bottom tabs v7.3+ has improved gesture handling and animations
+
+### Styling & UI
+
+- **react-native-unistyles**: `^3.0.7` - Modern styling solution
+- **@expo/vector-icons**: `^14.1.0` - Icon library
+- **expo-blur**: `14.1.6-canary-20250729-d8899ae` - Blur effects
+
+**Best Practices:**
+
+- Unistyles 3.x provides runtime theming and better performance
+- Use Expo Vector Icons for consistent iconography across platforms
+- Blur effects work well for modern UI patterns
+
+## Performance & Animations
+
+### Animation Libraries
+
+- **react-native-reanimated**: `~4.0.1` - High-performance animations
+- **react-native-gesture-handler**: `~2.26.0` - Gesture recognition
+
+**Best Practices:**
+
+- Reanimated 4.x supports the new architecture and has improved performance
+- Use worklets for complex animations to run on UI thread
+- Gesture Handler 2.26+ has better TypeScript support
+
+### Performance Optimizations
+
+- **react-native-screens**: `~4.11.1` - Native screen containers
+- **react-native-edge-to-edge**: `1.6.0` - Edge-to-edge display support
+- **react-native-nitro-modules**: `0.26.4` - Performance optimization
+
+**Best Practices:**
+
+- Screens 4.11+ provides better memory management
+- Edge-to-edge support for modern device displays
+- Nitro modules optimize bundle size and performance
+
+## Platform Support
+
+### Web Support
+
+- **react-native-web**: `~0.20.0` - React Native for web
+- **react-native-webview**: `13.13.5` - WebView component
+
+**Best Practices:**
+
+- React Native Web 0.20+ has improved compatibility with React 19
+- Use responsive design patterns for cross-platform compatibility
+- WebView 13.13+ has better security and performance
+
+### Native Features
+
+- **expo-dev-client**: `5.1.9-canary-20250729-d8899ae` - Development client
+- **expo-build-properties**: `0.15.0-canary-20250729-d8899ae` - Build configuration
+
+**Best Practices:**
+
+- Dev client enables custom native code and faster development
+- Build properties allow fine-tuning of native builds
+- Consider using EAS Build for production builds
+
+## Development Tools
+
+### TypeScript & Linting
+
+- **TypeScript**: `~5.8.3` - Type safety
+- **@types/react**: `~19.0.10` - React TypeScript definitions
+- **eslint**: `^9.25.0` - Code linting
+- **@biomejs/biome**: `2.1.3` - Fast formatter and linter
+
+**Best Practices:**
+
+- TypeScript 5.8+ has improved performance and new features
+- React types 19.0.10 matches React 19.1.0 version
+- ESLint 9.x is the latest major version with improved rules
+- Biome 2.1+ is faster than Prettier and includes linting
+
+### Build Tools
+
+- **@babel/core**: `^7.25.2` - JavaScript compiler
+- **eslint-config-expo**: `9.3.0-canary-20250729-d8899ae` - Expo-specific linting
+
+**Best Practices:**
+
+- Babel 7.25+ supports latest JavaScript features
+- Use Expo's ESLint config for React Native best practices
+
+## Expo Modules
+
+### Core Expo Modules
+
+- **expo-constants**: `17.1.8-canary-20250729-d8899ae` - App constants
+- **expo-font**: `13.4.0-canary-20250729-d8899ae` - Custom fonts
+- **expo-image**: `2.5.0-canary-20250729-d8899ae` - Optimized images
+- **expo-linking**: `7.1.8-canary-20250729-d8899ae` - Deep linking
+- **expo-splash-screen**: `0.30.11-canary-20250729-d8899ae` - Splash screen
+- **expo-status-bar**: `2.2.4-canary-20250729-d8899ae` - Status bar
+- **expo-system-ui**: `5.0.11-canary-20250729-d8899ae` - System UI
+- **expo-web-browser**: `14.1.7-canary-20250729-d8899ae` - Web browser
+- **expo-haptics**: `14.1.5-canary-20250729-d8899ae` - Haptic feedback
+- **expo-symbols**: `0.4.6-canary-20250729-d8899ae` - SF Symbols
+
+**Best Practices:**
+
+- All modules are on canary versions - ensure compatibility
+- Use expo-image for better performance than react-native-image
+- Leverage expo-haptics for better user experience
+- expo-linking for deep linking and URL handling
+
+## Version Management Strategy
+
+### Canary vs Stable
+
+- **Current Strategy**: Using canary versions for latest features
+- **Production Consideration**: Pin to stable versions for production releases
+- **Update Frequency**: Monitor canary releases for breaking changes
+
+### Dependency Categories
+
+1. **Core Framework**: React, React Native, Expo (canary for features)
+2. **Navigation**: React Navigation (stable versions)
+3. **UI/Styling**: Unistyles, Vector Icons (stable versions)
+4. **Performance**: Reanimated, Screens (stable versions)
+5. **Development**: TypeScript, ESLint, Biome (stable versions)
+
+## Security & Best Practices
+
+### Security Considerations
+
+- All dependencies are from trusted sources (Expo, React Navigation, etc.)
+- Canary versions may have experimental features - test thoroughly
+- Regular dependency updates recommended
+
+### Performance Recommendations
+
+- Use React Native 0.80+ new architecture when possible
+- Leverage Reanimated 4.x worklets for animations
+- Implement proper lazy loading with Expo Router
+- Use expo-image for optimized image loading
+
+### Code Quality
+
+- TypeScript for type safety
+- ESLint + Biome for code quality
+- Follow React Native and Expo best practices
+- Use proper error boundaries and suspense
+
+## Migration Notes
+
+### From Previous Versions
+
+- React 19: New concurrent features available
+- React Native 0.80: New architecture support
+- Expo 54: Latest SDK features and improvements
+- React Navigation 7: Improved performance and TypeScript support
+
+### Future Considerations
+
+- Monitor canary releases for stable versions
+- Consider enabling React Native new architecture
+- Evaluate performance impact of canary dependencies
+- Plan migration to stable versions for production

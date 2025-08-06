@@ -1,0 +1,59 @@
+---
+description: Package installation guidelines using bunx expo install for Expo projects
+globs:
+alwaysApply: true
+---
+
+# Package Installation Guidelines
+
+## Use `bunx expo install` for Package Installation
+
+When adding new packages to this Expo project, always use `bunx expo install` instead of `npm install` or `bun add`.
+
+### Why Use `bunx expo install`?
+
+1. **Expo Compatibility**: Ensures packages are compatible with your Expo SDK version
+2. **Version Management**: Automatically resolves compatible versions for Expo modules
+3. **Bun Integration**: Leverages Bun's fast package manager with Expo's compatibility checks
+4. **Consistency**: Maintains consistency with the project's Bun-based setup
+
+### Installation Commands
+
+```bash
+# ✅ Correct - Use bunx expo install
+bunx expo install package-name
+
+# ❌ Incorrect - Don't use these
+npm install package-name
+bun add package-name
+yarn add package-name
+```
+
+### Examples
+
+```bash
+# Installing Expo modules
+bunx expo install expo-camera
+bunx expo install expo-location
+bunx expo install expo-notifications
+
+# Installing React Navigation
+bunx expo install @react-navigation/native
+bunx expo install @react-navigation/stack
+
+# Installing third-party libraries
+bunx expo install react-native-svg
+bunx expo install react-native-gesture-handler
+```
+
+### Development Dependencies
+
+For development dependencies, still use `bunx expo install`:
+
+```bash
+# Installing dev dependencies
+bunx expo install --dev @types/react-native
+bunx expo install --dev eslint-plugin-react-native
+```
+
+Remember: This project uses Bun as the package manager, so `bunx expo install` provides the best integration between Bun's speed and Expo's compatibility checks.

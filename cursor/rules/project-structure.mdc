@@ -1,0 +1,113 @@
+---
+description: Project directory structure and important files for smart-bank React Native/Expo app
+globs: **/*
+alwaysApply: false
+---
+
+# Smart Bank Project Structure
+
+This document outlines the complete directory structure and important files for the smart-bank React Native/Expo application.
+
+## Root Directory Structure
+
+```
+smart-bank/
+├── .cursor/                    # Cursor IDE configuration
+│   └── rules/                  # Cursor rules and guidelines
+│       ├── cursor-rule.mdc     # How to add/edit cursor rules
+│       ├── self-improvement.mdc # Self-improvement guidelines
+│       └── project-structure.mdc # This file
+├── .expo/                      # Expo development files
+├── .git/                       # Git version control
+├── .vscode/                    # VS Code configuration
+├── node_modules/               # Node.js dependencies
+├── src/                        # Main source code directory
+│   ├── app/                    # Expo Router app directory
+│   │   ├── _layout.tsx         # Root layout component
+│   │   └── index.tsx           # Main app entry point
+│   └── assets/                 # Static assets
+│       ├── fonts/              # Custom fonts
+│       │   └── SpaceMono-Regular.ttf
+│       └── images/             # App images and icons
+│           ├── adaptive-icon.png
+│           ├── favicon.png
+│           ├── icon.png
+│           ├── partial-react-logo.png
+│           ├── react-logo.png
+│           ├── react-logo@2x.png
+│           ├── react-logo@3x.png
+│           └── splash-icon.png
+├── app.json                    # Expo app configuration
+├── biome.json                  # Biome linter/formatter config
+├── bun.lock                    # Bun package lock file
+├── eslint.config.js            # ESLint configuration
+├── expo-env.d.ts              # Expo TypeScript declarations
+├── package.json                # Node.js project configuration
+├── README.md                   # Project documentation
+├── tsconfig.json              # TypeScript configuration
+└── .gitignore                 # Git ignore patterns
+```
+
+## Important Configuration Files
+
+### Core Configuration
+
+- **`package.json`**: Project dependencies and scripts
+
+  - Main entry: `expo-router/entry`
+  - Scripts: start, android, ios, web, lint
+  - Key dependencies: Expo SDK, React Native, React Navigation
+
+- **`app.json`**: Expo app configuration
+
+  - App name: "smart-bank"
+  - Scheme: "smartbank"
+  - Plugins: expo-router, splash-screen, font, web-browser, build-properties
+  - Experiments: typedRoutes enabled
+
+- **`tsconfig.json`**: TypeScript compiler configuration
+- **`biome.json`**: Code formatting and linting rules
+- **`eslint.config.js`**: JavaScript/TypeScript linting
+
+### Source Code Structure
+
+#### App Directory (`src/app/`)
+
+- **`_layout.tsx`**: Root layout component for Expo Router
+- **`index.tsx`**: Main app entry point and home screen
+
+#### Assets Directory (`src/assets/`)
+
+- **`fonts/`**: Custom font files (SpaceMono-Regular.ttf)
+- **`images/`**: App icons, logos, and splash screen images
+
+### Development Tools
+
+- **`.cursor/rules/`**: Cursor IDE rules and guidelines
+- **`.expo/`**: Expo development cache and configuration
+- **`.vscode/`**: VS Code workspace settings
+
+## Key Technologies
+
+- **Framework**: React Native with Expo SDK
+- **Navigation**: Expo Router (file-based routing)
+- **Styling**: React Native Unistyles
+- **Package Manager**: Bun
+- **Linting**: ESLint + Biome
+- **Language**: TypeScript
+
+## Development Guidelines
+
+1. **File Organization**: Keep all source code in `src/` directory
+2. **Routing**: Use Expo Router file-based routing in `src/app/`
+3. **Assets**: Store all static assets in `src/assets/`
+4. **Configuration**: Maintain configuration files in root directory
+5. **Cursor Rules**: Add new rules to `.cursor/rules/` following naming conventions
+
+## Scripts
+
+- `npm start` / `bun start`: Start Expo development server
+- `npm run android` / `bun run android`: Run on Android
+- `npm run ios` / `bun run ios`: Run on iOS
+- `npm run web` / `bun run web`: Run on web
+- `npm run lint` / `bun run lint`: Run linting
